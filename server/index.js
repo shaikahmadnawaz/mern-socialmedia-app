@@ -8,6 +8,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import authRoutes from "./routers/auth";
 
 // configurations
 // This is only implemented when ypu use type module in package.json
@@ -53,6 +54,9 @@ const upload = multer({ storage });
 
 // routes with files
 app.post("/auth/register", upload.single("picture"), register);
+
+// routes
+app.use("/auth", authRoutes);
 
 // mongoose setup
 const PORT = process.env.PORT || 6001;
