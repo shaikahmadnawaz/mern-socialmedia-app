@@ -32,8 +32,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
-// filestorage
-// used for uploading files
+// files storage is used for uploading files
 
 // There are two options available, destination and filename. They are both functions that determine where the file should be stored.
 
